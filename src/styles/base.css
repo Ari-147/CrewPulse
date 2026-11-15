@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--text);font:400 14px/1.5 Inter,system-ui,sans-serif;font-variant-numeric:tabular-nums;background:radial-gradient(1000px 520px at 85% -10%,color-mix(in srgb,var(--vi) 14%,transparent),transparent),var(--bg)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(1px 1px at 12% 20%,var(--text),transparent),radial-gradient(1px 1px at 38% 70%,var(--text),transparent),radial-gradient(1px 1px at 63% 32%,var(--text),transparent),radial-gradient(1.5px 1.5px at 82% 78%,var(--text),transparent),radial-gradient(1px 1px at 92% 12%,var(--text),transparent)}
+:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
