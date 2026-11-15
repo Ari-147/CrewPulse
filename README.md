@@ -2,7 +2,7 @@
 
 CrewPulse is a fictional, baseline-aware astronaut health-monitoring dashboard for NASA Space Apps' **Create Health Monitoring Software for Astronauts on Space Missions** challenge. [Live demo (add GitHub Pages URL)](https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/)
 
-![CrewPulse dashboard screenshot](docs/screenshot.png)
+<img width="1331" height="730" alt="image" src="https://github.com/user-attachments/assets/ee127d6e-b6b9-4074-a587-2746899d0a40" />
 
 ## The challenge
 
