@@ -1,3 +1,75 @@
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f6fb;--s1:#fff;--s2:#eef2f8;--line:rgba(15,23,42,.1);--line2:rgba(15,23,42,.22);--text:#0b1220;--t2:#3d4a63;--muted:#5b6678;--cy:#0369a1;--vi:#6d28d9;--ok:#047857;--wa:#b45309;--al:#b91c1c}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#060a14;--s1:#0b1220;--s2:#111c31;--line:rgba(148,163,184,.14);--line2:rgba(148,163,184,.28);--text:#e6ebf5;--t2:#b3bdd0;--muted:#8591a8;--cy:#38bdf8;--vi:#a78bfa;--ok:#34d399;--wa:#fbbf24;--al:#f87171}}
-:root[data-theme="dark"]{--bg:#060a14;--s1:#0b1220;--s2:#111c31;--line:rgba(148,163,184,.14);--line2:rgba(148,163,184,.28);--text:#e6ebf5;--t2:#b3bdd0;--muted:#8591a8;--cy:#38bdf8;--vi:#a78bfa;--ok:#34d399;--wa:#fbbf24;--al:#f87171}
+/* Flight console design tokens. Dark is the default; light overrides it. */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: #0a0c0f;
+  --surface-1: #11141a;
+  --surface-2: #181c24;
+  --line: #242a35;
+  --line-strong: #343c4a;
+  --border-control: #667286; /* control boundaries, 3:1 or better on surfaces */
+
+  /* Text */
+  --text: #e8ebf0;
+  --text-2: #a5aebd;
+  --text-muted: #8892a5;
+
+  /* Interaction (focus, selection, primary action). Never used for status. */
+  --accent: #7cb7ff;
+  --on-accent: #0a0c0f;
+
+  /* Status: the only semantic colour in the UI */
+  --status-ok: #3dd68c;
+  --status-watch: #f2b134;
+  --status-alert: #ff5c5c;
+  --tint-ok: color-mix(in srgb, var(--status-ok) 12%, transparent);
+  --tint-watch: color-mix(in srgb, var(--status-watch) 12%, transparent);
+  --tint-alert: color-mix(in srgb, var(--status-alert) 14%, transparent);
+
+  /* Spacing: strict 4px grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* Shape */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* Type */
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --fs-label: 12px;
+  --fs-caption: 12px;
+  --fs-body-s: 13px;
+  --fs-body: 14px;
+  --fs-title: 16px;
+  --fs-heading: 20px;
+  --fs-value: 32px;
+
+  /* Motion and chrome */
+  --dur: 120ms;
+  --bar-height: 48px;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f3f4f6;
+  --surface-1: #ffffff;
+  --surface-2: #edeff3;
+  --line: #d9dde4;
+  --line-strong: #b9c0cc;
+  --border-control: #7b8596;
+  --text: #0f1319;
+  --text-2: #404a5a;
+  --text-muted: #5b6678;
+  --accent: #1d5fd1;
+  --on-accent: #ffffff;
+  --status-ok: #0b7a4b;
+  --status-watch: #9a5b00;
+  --status-alert: #b42318;
+}

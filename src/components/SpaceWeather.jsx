@@ -1,4 +1,9 @@
+import Panel from './Panel.jsx';
+
 export default function SpaceWeather({ spaceWeather }) {
-  const text = spaceWeather ? `Last 30 days: ${spaceWeather.n} solar flares, strongest class ${spaceWeather.top}. Live from NASA DONKI.` : 'Live NASA DONKI solar-flare feed loads when the page is hosted online (e.g. GitHub Pages). Not reachable in this preview.';
-  return <><h3>NASA space weather · DONKI</h3><p className="ks zero-margin">{text}</p></>;
+  const { status, data } = spaceWeather;
+  const text = status === 'loading' ? 'Loading NASA DONKI solar-flare summary…'
+    : status === 'error' ? 'Solar-flare feed unavailable (offline, rate-limited or blocked). This is not an all-clear. Check NASA DONKI directly.'
+    : `Last 30 days: ${data.n} solar flares, strongest class ${data.top}. Live from NASA DONKI.`;
+  return <Panel title="Space weather · DONKI" meta={status === 'ready' ? 'Live' : status === 'loading' ? 'Loading' : 'Unavailable'} className="weather"><div className="panel-body"><p className="note" role={status === 'error' ? 'status' : undefined}>{text}</p></div></Panel>;
 }
